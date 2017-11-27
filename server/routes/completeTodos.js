@@ -9,4 +9,7 @@ router.get('/:idUser/:idTodo', todoController.completeTodo)
 // Get all done todos
 router.get('/', doneController.getDoneTodos)
 
+// Get todo by user id
+router.get('/:idUser', doneController.getDoneTodosById)
+
 module.exports = router

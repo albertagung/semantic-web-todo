@@ -71,14 +71,14 @@ new Vue({
   },
   methods: {
     getDataTodos () {
-      axios.get('http://localhost:3000/todos').then((response) => {
+      axios.get(`http://localhost:3000/todos/5a1984afb57da0719bc2084d`).then((response) => {
         this.todos.push(...response.data)
       }).catch((err) => {
         console.log(err);
       })
     },
     getDataCompleted () {
-      axios.get('http://localhost:3000/complete').then((response) => {
+      axios.get('http://localhost:3000/complete/5a1984afb57da0719bc2084d').then((response) => {
         this.completed.push(...response.data)
       }).catch((err) => {
         console.log(err);
