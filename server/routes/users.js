@@ -1,9 +1,33 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+let userController = require('../controllers/userController.js')
+let loginController = require('../controllers/loginController.js')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// Insert new user
+router.post('/',userController.insertDataUser)
 
-module.exports = router;
+// Find all users
+router.get(
+  '/',
+  // loginController.verifyLogin,
+  // loginController.verifyAdmin,
+  userController.findAllUsers
+)
+
+// Update user by id
+router.put(
+  '/:id',
+  // loginController.verifyLogin,
+  // loginController.verifyById,
+  userController.updateUserById
+)
+
+// Delete user by id
+router.delete(
+  '/:id',
+  // loginController.verifyLogin,
+  // loginController.verifyAdmin,
+  userController.removeUserById
+)
+
+module.exports = router

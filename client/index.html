@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Flying Button Animation -->
+    <link rel="stylesheet" href="flyingButtonStyle.css">
+    <!-- VUE Script -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- AXIOS Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+
+    <div id="v">
+
+      <!-- Card -->
+      <div class="todoPanel">
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <todo-list v-for="todo in todos" :todo="todo" @get-a="testFunc"></todo-list>
+          </div>
+          <div class="row justify-content-md-center">
+            <img src="/assets/img/Add.png" alt="" id="imgAdd">
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Todos -->
+      <div class="completePanel">
+        <div class="container-fluid">
+          <div class="row justify-content-md-center" style="padding-bottom: 8em">
+            <completed-list v-for="complete in completed" :complete="complete"></completed-list>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Add More Todos -->
+      <div class="modal fade" id="modalAddMore" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content bg-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Todo Item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label" >Todo name:</label>
+                  <input type="text" class="form-control" id="todoName">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Todo Description:</label>
+                  <textarea class="form-control" id="todoDescription"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Todo Tag:</label>
+                  <input type="text" class="form-control" id="todoTag">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Todo Status:</label>
+                  <select class="form-control" id="todoStatus">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" @click="addTodo">Add Todo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer bg-dark">
+        <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <p>Copyright Hacktiv8</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- VUE Calling Script -->
+    <script src="/assets/scripts/vueScript.js"></script>
+    <!-- Jquery Mods Scripts -->
+    <script src="/assets/scripts/jqueryScript.js"></script>
+  </body>
+</html>

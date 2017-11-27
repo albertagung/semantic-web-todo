@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0
+}
+
+body {
+  background-color: #511d6b
+}
+
+/*Main Card*/
+.card {
+  height: 450px;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 1em;
+  margin-bottom: 3em
+}
+
+.card h4 {
+  margin-top: 0.5em
+}
+
+.card hr {
+  background-color: #eee;
+}
+
+.card button {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.todoPanel img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 3em
+}
+
+/*Modal*/
+#modalCompleted {
+  color: white
+}
+
+#modalCompleted hr {
+  background-color: white;
+  padding-top: 0;
+  margin-top: 0
+}
+
+#modalAddMore {
+  color: white
+}
+
+/*Footer*/
+.footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+  color: green
+}
